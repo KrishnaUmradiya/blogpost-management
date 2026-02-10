@@ -63,7 +63,7 @@ const Login = () => {
     <>
     <div className="form-container">
         <h1 className="form-title">Welcome Back</h1>
-        <h3 className='short-title'>Please login to your account</h3>
+        <p className='short-title'>Please login to your account</p>
         <form onSubmit={handleSubmit}>
           {/*email feild */}
           <div className="form-group">

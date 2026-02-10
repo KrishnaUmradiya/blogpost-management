@@ -14,7 +14,7 @@ import AuthGuard from "./auth/AuthGuard";
 import { ToastContainer } from "react-toastify";
 
 const DefaultRoute = () => {
-  const loginData = JSON.palerse(localStorage.getItem("loginData"));
+  const loginData = JSON.parse(localStorage.getItem("loginData"));
   if (loginData) {
     return <Navigate to="/dashboard" replace />;
   }

@@ -1,3 +1,7 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(135deg, #0f2027, #412c64, #6a11cb);
@@ -9,40 +13,30 @@ body {
 }
 
 .form-container {
-  max-width: 550px;
+  max-width: 450px;
   margin: 100px auto;
-  background: rgb(200, 199, 206);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 50px;
-  border-radius: 12px;
-  box-shadow: 0 8px 32px 0 rgba(230, 225, 225, 0.37);
+  padding: 40px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
   text-align: center;
-  width: 100%;
-  box-sizing: border-box;
   animation: fadeIn 0.8s ease-out;
 }
-
-.form-container p{
-    line-height: 0em;
-    background: #67377f;
-}
-
 /* page title style */
 .form-title {
   text-align: center;
   margin-bottom: 30px;
-  color: #67377f;
+  color: #6a11cb;
   font-size: 2.2em;
   font-weight: 700;
   line-height: 15%;
   left: -0.5px;
   margin-top: 10px;
 }
-.short-title{
- text-align: center;
+.short-title {
+  text-align: center;
   margin-bottom: 30px;
-  color: #67377f;
+  color: #555555;
   line-height: 0%;
   font-size: 1.1em;
   font-weight: 400;
@@ -52,14 +46,13 @@ body {
 /*form group styles*/
 .form-group {
   margin-bottom: 25px;
-  text-align: left;
-  margin-top:40px ;
+  text-align: left;  
 }
 
 .form-group label {
   display: block;
-  margin-bottom: 8px;
-  color: #67377f;
+  margin-bottom: 5px;
+  color: #412c64;
   font-size: 1em;
   font-weight: 600;
 }
@@ -67,9 +60,9 @@ body {
 .form-group input {
   width: 100%;
   padding: 12px 15px;
-  border: 1px solid black;
-  background: rgba(255, 255, 255, 0.08);
-  color: black;
+  border: 1px solid #ccc;
+  background: #f9f9fc;
+  color: #333;
   border-radius: 8px;
   box-sizing: border-box;
   font-size: 1em;
@@ -80,49 +73,49 @@ body {
 }
 
 .form-group input:focus {
-  outline: none;
-  border-color: #cc00ff;
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25);
-  background: rgbs(255, 255, 255, 255, 0.15);
+  border-color: #6a11cb;
+  box-shadow: 0 0 0 3px rgba(106, 17, 203, 0.25);
+  background: #ffffff;
 }
 
 /* primary button style */
 .btn-primary {
   width: 100%;
   padding: 14px 25px;
-  background-color: #67377f;
-  color: white;
+  background: #6a11cb;
+  color: #ffffff;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 1.1em;
   font-weight: 600;
   cursor: pointer;
-  margin-top: 20px;
-  transition: background-color 0.3s ease transform o.2s ease;
+  margin-top: 25px;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 22px rgba(106, 17, 203, 0.35);
 }
-.btn-primary :hover {
-  background-color: #531e6e;
+.btn-primary:hover {
+  background-color: #5310a3;
   transform: translateY(-5px);
 }
-.btn-primary :active {
+.btn-primary:active {
   transform: translateY(0);
 }
 
 /* link text styles */
 .link-text {
   margin-top: 25px;
-  color: #ffffff;
+  color: #555;
   font-size: 0.95em;
   text-align: center;
 }
 .link-text a {
-  color: #551874;
+  color: #6a11cb;
   text-decoration: none;
   font-weight: 600;
   transition: color 0.3es ease;
 }
 .link-text a:hover {
-  color: #67377f;
+  text-decoration: underline;
 }
 
 /* Animation */
