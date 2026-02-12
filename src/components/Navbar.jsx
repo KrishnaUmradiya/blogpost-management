@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaBlog, FaHome, FaPlusSquare, FaSignOutAlt } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
-import './Navbar.css'
+import "./Navbar.css";
 
 const Navbar = () => {
+  const user = JSON.parse(localStorage.getItem("authData"));
   return (
     <>
       <nav className="navbar">
@@ -25,7 +26,7 @@ const Navbar = () => {
             </NavLink>
           </div>
           <div className="navbar-actions">
-            <span className="user-name">Hi, User</span>
+            <span className="user-name">{user.name}</span>
 
             <button className="logout-btn">
               <FaSignOutAlt />
