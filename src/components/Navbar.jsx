@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { FaBlog, FaHome, FaPlusSquare, FaSignOutAlt } from "react-icons/fa";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 
 const Navbar = () => {
+  //const navigate = useNavigate()
   const user = JSON.parse(localStorage.getItem("authData"));
   return (
     <>
@@ -20,7 +21,7 @@ const Navbar = () => {
               Home
             </NavLink>
 
-            <NavLink to="/create-post" className="nav-item">
+            <NavLink to="/createpost" className="nav-item">
               <FaPlusSquare className="nav-icon" />
               Craeate Post
             </NavLink>

@@ -12,6 +12,7 @@ import {
 import Dashboard from "./pages/Dashboard";
 import AuthGuard from "./auth/AuthGuard";
 import { ToastContainer } from "react-toastify";
+import CreatePost from "./pages/CreatePost";
 
 const DefaultRoute = () => {
   const loginData = JSON.parse(localStorage.getItem("loginData"));
@@ -48,6 +49,22 @@ function App() {
       element: (
         <AuthGuard required={true}>
           <Dashboard />
+        </AuthGuard>
+      ),
+    },
+    {
+      path: "/createpost",
+      element: (
+        <AuthGuard>
+          <CreatePost />
+        </AuthGuard>
+      ),
+    },
+    {
+      path: "/edit-post/:id",
+      element: (
+        <AuthGuard>
+          <CreatePost />
         </AuthGuard>
       ),
     },
