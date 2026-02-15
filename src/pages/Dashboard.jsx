@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "../components/Navbar";
+
 
 import { FaPlus } from "react-icons/fa";
 import { MdDelete, MdEdit } from "react-icons/md";
 import "./Dashboard.css";
 import { useNavigate } from "react-router-dom";
+import Navbar from "../Components/Navbar";
 
 const Dashboard = () => {
   const [posts, setPosts] = useState([]);
@@ -88,7 +89,7 @@ const Dashboard = () => {
                 <div className="post-card" key={post.id}>
                   <div className="post-image-container">
                     <img
-                      src={post.imageUrl}
+                      src={post.imageurl}
                       alt="post"
                       className="post-card-image"
                     />
@@ -112,7 +113,7 @@ const Dashboard = () => {
 
                   <div className="post-card-content">
                     <div className="post-meta">
-                      <span className="post-author">{post.author}</span>
+                      <span className="post-author">{post.auther}</span>
                       <span className="post-date">{post.createdAt}</span>
                     </div>
                     <h3 className="post-card-title">{post.title}</h3>
