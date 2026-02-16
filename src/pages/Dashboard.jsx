@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 
-
 import { FaPlus } from "react-icons/fa";
 import { MdDelete, MdEdit } from "react-icons/md";
 import "./Dashboard.css";
@@ -26,6 +25,10 @@ const Dashboard = () => {
 
   const handleEdit = (postId) => {
     navigate(`/edit-post/${postId}`);
+  };
+
+  const handleReadMore = (id) => {
+    navigate(`/postdetails/${id}`);
   };
 
   const handleDelete = async (id) => {
@@ -118,7 +121,12 @@ const Dashboard = () => {
                     </div>
                     <h3 className="post-card-title">{post.title}</h3>
                     <p className="post-card-description">{post.description}</p>
-                    <button className="read-more-btn">Read More</button>
+                    <button
+                      className="read-more-btn"
+                      onClick={() => handleReadMore(post.id)}
+                    >
+                      Read More
+                    </button>
                   </div>
                 </div>
               ))}
