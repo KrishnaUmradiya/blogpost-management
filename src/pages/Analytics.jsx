@@ -10,6 +10,14 @@ const Analytics = () => {
         {name:'Test',posts:4},
         {name:'Demo',posts:2}
     ];
+    const headers = [
+        {label:'ID',key:'id'},
+        {label:'Title',key:'title'},
+        {label:'Author',key:'author'},
+        {label:'Date',key:'createdAt'},
+        {label:'Time',key:'createdAt'}
+    ]
+
     const COLORS = ['#0088FE','#00C49F','#FFBB28','#FF8042']
   return (
     <>
@@ -68,21 +76,24 @@ const Analytics = () => {
                 <h3>All Posts</h3>
                 <div className="table-wrapper">
                     <table className="analytics-table">
-                        <thead>
+                        <thead>                            
                             <tr>
-                                <th>ID</th>
-                                <th>Title</th>
-                                <th>Author</th>
-                                <th>Date</th>
+                                {headers.map((header,index)=>(
+                                    <th>{header.label}</th>
+                                ))}
                             </tr>
                         </thead>
-                        <tbody>
+                       
                             <tr>
                                 <td>1</td>
                                 <td>React Basics</td>
                                 <td>Admin</td>
                                 <td>16/02/2026</td>
                             </tr>
+                        
+                        <tbody>
+
+                            
                             <tr>
                                 <td>2</td>
                                 <td>Understanding Hooks</td>
@@ -98,7 +109,7 @@ const Analytics = () => {
                         </tbody>
                     </table>
                 </div>
-                
+
                 <div className="pagination">
                     <button className="page-btn">Previous</button>
                     <button className="page-btn active">1</button>
