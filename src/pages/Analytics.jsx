@@ -14,8 +14,10 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
+import { useNavigate } from "react-router-dom";
 
 const Analytics = () => {
+  const navigate = useNavigate()
   const [postData, setPostData] = useState([]);
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -65,6 +67,27 @@ const Analytics = () => {
     name: auther,
     posts: autherCount[auther],
   }));
+
+   const handleEdit = (postId) => {
+    navigate(`/edit-post/${postId}`);
+  };
+
+  const handleDelete = async (id) => {
+    const confirmDelete = window.confirm(
+      "Are you sure you want to delete this post?",
+    );
+    if (!confirmDelete) return;
+
+    try {
+      await fetch(`http://localhost:3001/posts/${id}`, {
+        method: "DELETE",
+      });
+
+      setPosts(posts.filter((post) => post.id !== id));
+    } catch (error) {
+      console.log("Delete error:", error);
+    }
+  };
 
   const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
   return (

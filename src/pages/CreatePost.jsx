@@ -145,6 +145,19 @@ function CreatePost() {
     setError(newError);
     return Object.keys(newError).length === 0;
   };
+
+  const handleClear=()=>{
+    setData({
+    title: "",
+    description: "",
+    auther: autherName?.name || "",
+    imageurl: "",
+    imageType: "url",
+  });
+
+  setImagePreview(null);
+  setError({});
+  }
   return (
     <div className="create-post-page">
       <Navbar />
@@ -193,6 +206,7 @@ function CreatePost() {
 
             <div className="form-group">
               <label htmlFor="description">Description</label>
+              <div className="input-wrapper">
               <textarea
                 name="description"
                 id="description"
@@ -201,9 +215,11 @@ function CreatePost() {
                 onChange={handleChange}
                 placeholder="What's In Your Mind ?? Write Your Story Here."
               />
+              
               {error.description && (
                 <span className="error">{error.description}</span>
               )}
+              </div>
             </div>
 
             <div className="form-group">
@@ -284,7 +300,7 @@ function CreatePost() {
                 {id ? "Update Post" : "Publish Post"}
               </button>
 
-              <button type="button" className="cancel-btn">
+              <button type="button" className="cancel-btn" onClick={handleClear}>
                 Clear Form
               </button>
             </div>
