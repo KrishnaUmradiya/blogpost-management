@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { FaPlus } from "react-icons/fa";
+import { FaPlus, FaStar } from "react-icons/fa";
 import { MdDelete, MdEdit } from "react-icons/md";
 import "./Dashboard.css";
 import { useNavigate } from "react-router-dom";
@@ -100,6 +100,9 @@ const Dashboard = () => {
                       alt="post"
                       className="post-card-image"
                     />
+                    <button className={`favorite-btn`}>
+                      <FaStar size={22} color="#ffffff"/>
+                    </button>
                     <div className="post-actions">
                       <button
                         className="action-btn edit-btn"
