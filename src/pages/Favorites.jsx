@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "../Components/Navbar";
+import Navbar from "../components/Navbar";
 import { MdDeleteSweep, MdOpenInNew } from "react-icons/md";
 import { FaRegStar } from "react-icons/fa";
 import "./Favorites.css";
