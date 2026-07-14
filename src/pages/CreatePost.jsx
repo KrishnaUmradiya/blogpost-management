@@ -35,7 +35,7 @@ function CreatePost() {
  const isEditMode = !!id;
   useEffect(() => {
   if (isEditMode) {
-    fetch(`http://localhost:3001/posts/${id}`)
+    fetch(`${import.meta.env.VITE_API_URL}/posts/${id}`)
       .then((res) => res.json())
       .then((post) => {
         setData({
@@ -71,8 +71,8 @@ function CreatePost() {
     if (!validate()) return;
 
     const url = isEditMode
-      ? `http://localhost:3001/posts/${id}`
-      : "http://localhost:3001/posts";
+      ? `${import.meta.env.VITE_API_URL}/posts/${id}`
+      : `${import.meta.env.VITE_API_URL}/posts`;
 
     const method = isEditMode ? "PUT" : "POST";
 

@@ -14,7 +14,7 @@ const Dashboard = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch("http://localhost:3001/posts");
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/posts`);
       const data = await response.json();
       setPosts(data);
     } catch (error) {
@@ -57,7 +57,7 @@ const Dashboard = () => {
     if (!confirmDelete) return;
 
     try {
-      await fetch(`http://localhost:3001/posts/${id}`, {
+      await fetch(`${import.meta.env.VITE_API_URL}/posts/${id}`, {
         method: "DELETE",
       });
 

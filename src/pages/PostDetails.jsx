@@ -12,7 +12,7 @@ const PostDetails = () => {
   const { id } = useParams();
   const fetchData = async () => {
     try {
-      const response = await fetch(`http://localhost:3001/posts/${id}`);
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/posts/${id}`);
       const data = await response.json();
       setShowPostDetails(data);
     } catch (error) {
